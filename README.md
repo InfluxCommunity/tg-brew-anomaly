@@ -2,7 +2,7 @@
 
 Anais and Steven's Nov 2020 influx days talk. WIP.
 
-![](!https://github.com/influxdata/tg-brew-anomaly/blob/master/dashboard.png?raw=true)
+![](https://github.com/influxdata/tg-brew-anomaly/blob/master/dashboard.png?raw=true)
 
 ## dependencies
 
