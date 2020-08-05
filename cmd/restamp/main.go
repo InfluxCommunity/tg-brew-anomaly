@@ -21,6 +21,7 @@ var (
 func main() {
 	var err error
 	log.SetOutput(os.Stderr)
+	log.SetFlags(0)
 
 	flag.Parse()
 	if filename == nil || len(*filename) == 0 {

@@ -24,6 +24,7 @@ func main() {
 
 	var err error
 	log.SetOutput(os.Stderr)
+	log.SetFlags(0)
 
 	flag.Parse()
 	if filename == nil || len(*filename) == 0 {
@@ -55,5 +56,9 @@ func main() {
 	}
 	if s.Err() != nil {
 		log.Fatalf("error reading input file: %s", err)
+	}
+	log.Println("Replay done. going to sleep until telegraf exits")
+	s = bufio.NewScanner(os.Stdin)
+	for s.Scan() {
 	}
 }
