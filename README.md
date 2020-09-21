@@ -32,7 +32,7 @@ We'll test that out later.
 This will amend the temperature data with current timestamps and store it to a new file.
 You may want to repeat this step later to replay the data with new, current, timestamps.
 
-    tar -Oxf data/temps.tar.gz | ./restamp -filename - > ./data/temps-stamped.txt
+    gunzip --stdout ./data/temps.txt.gz | ./restamp -filename - > ./data/temps-stamped.txt
 
 You can verify it worked with this command:
 
