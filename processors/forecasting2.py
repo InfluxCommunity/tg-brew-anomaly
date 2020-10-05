@@ -1,4 +1,5 @@
 # Parses line protocol data from stdin and uses statsmodels' Holt to make a forecast. 
+# Uses the additive version of Holt's method. 
 # Residuals are also calculated.  
 import sys
 import pandas as pd
@@ -58,8 +59,8 @@ for line in sys.stdin:
             else: 
                 s = s[~np.isnan(s)]
                 lastvalue = s[-1]
-            #Use the Holt function to fit the data. 
-            fit = Holt(s,damped_trend=True,initialization_method="estimated").fit(optimized=True)
+            #Use the Holt function to fit the data. Specify the type of trend component. 
+            fit = Holt(s,exponential=False,initialization_method="estimated").fit(optimized=True)
             col = col[i]
             #Make a forecast with the forecast method. 
             fcast = fit.forecast(predictions)
@@ -70,10 +71,10 @@ for line in sys.stdin:
                     value = fcast[i]
                     time = time + timedelta(seconds = 1)
                     timestr = str(time.value)
-                    lineout = "fcast" + "," + "brew" + "=" + tag + " temperature=" + str(value) + " " + timestr 
+                    lineout = "fcastlinear" + "," + "brew" + "=" + tag + " temperature=" + str(value) + " " + timestr 
                     print(lineout)
             
                     #Calculate residuals  
                     residual = abs(fcast[-1] - lastvalue) 
-                    anomalylineout = "anomaly" + "," + "brew" + "=" + tag + " temperature=" + str(residual) + " " + timestr 
+                    anomalylineout = "anomalylinear" + "," + "brew" + "=" + tag + " temperature=" + str(residual) + " " + timestr 
                     print(anomalylineout)
