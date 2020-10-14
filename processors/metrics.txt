@@ -1,0 +1,12 @@
+temperature,brew=bv_1 temperature=0 1597897450810763000
+temperature,brew=bv_1 temperature=1 1597897451810763000
+temperature,brew=bv_1 temperature=2 1597897452810763000
+temperature,brew=bv_1 temperature=3 1597897453810763000
+temperature,brew=bv_1 temperature=4 1597897454810763000
+temperature,brew=bv_1 temperature=5 1597897455810763000
+temperature,brew=bv_1 temperature=6 1597897456810763000
+temperature,brew=bv_1 temperature=7 1597897457810763000
+temperature,brew=bv_1 temperature=8 1597897458810763000
+temperature,brew=bv_1 temperature=9 1597897459810763000
+temperature,brew=bv_1 temperature=10 1597897460810763000
+temperature,brew=bv_1 temperature=11 1597897461810763000
